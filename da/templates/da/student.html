@@ -1,0 +1,239 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+ {{ player.round_number }}回目   応募順位入力
+{% endblock %}
+
+{% block content %}
+
+
+<div style="background-color : #FFFF99">
+    <p>いま、あなたのタイプは 【学生
+        {% if player.role == 'student1' %} 1 {% endif %}
+        {% if player.role == 'student2' %} 2 {% endif %}
+        {% if player.role == 'student3' %} 3 {% endif %}
+        {% if player.role == 'student4' %} 4 {% endif %}
+        {% if player.role == 'student5' %} 5 {% endif %}
+        {% if player.role == 'student6' %} 6 {% endif %}
+        】に決定しました。</p>
+</div>
+
+
+<div style="background-color : #f0f8ff">
+    <p>各学生の進学希望順位は以下の表の通りです。</p>
+        <table class="" border=1  align="left">
+            <tr><th bgcolor="#FFFFFF"></th>
+                {% if player.role == 'student1' %}<th bgcolor="#CCFFCC">学生1</th>{% else %}<th bgcolor="#FFFFFF">学生1</th>{% endif %}
+                {% if player.role == 'student2' %}<th bgcolor="#CCFFCC">学生2</th>{% else %}<th bgcolor="#FFFFFF">学生2</th>{% endif %}
+                {% if player.role == 'student3' %}<th bgcolor="#CCFFCC">学生3</th>{% else %}<th bgcolor="#FFFFFF">学生3</th>{% endif %}
+                {% if player.role == 'student4' %}<th bgcolor="#CCFFCC">学生4</th>{% else %}<th bgcolor="#FFFFFF">学生4</th>{% endif %}
+                {% if player.role == 'student5' %}<th bgcolor="#CCFFCC">学生5</th>{% else %}<th bgcolor="#FFFFFF">学生5</th>{% endif %}
+                {% if player.role == 'student6' %}<th bgcolor="#CCFFCC">学生6</th>{% else %}<th bgcolor="#FFFFFF">学生6</th>{% endif %}
+            </tr>
+            <tr><td bgcolor="#FFFFFF">第1希望</td>
+                {% if player.role == 'student1' %}<th bgcolor="#CCFFCC">B </th>{% else %}<th bgcolor="#FFFFFF">B </th>{% endif %}
+                {% if player.role == 'student2' %}<th bgcolor="#CCFFCC">B </th>{% else %}<th bgcolor="#FFFFFF">B </th>{% endif %}
+                {% if player.role == 'student3' %}<th bgcolor="#CCFFCC">C </th>{% else %}<th bgcolor="#FFFFFF">C </th>{% endif %}
+                {% if player.role == 'student4' %}<th bgcolor="#CCFFCC">A </th>{% else %}<th bgcolor="#FFFFFF">A </th>{% endif %}
+                {% if player.role == 'student5' %}<th bgcolor="#CCFFCC">A </th>{% else %}<th bgcolor="#FFFFFF">A </th>{% endif %}
+                {% if player.role == 'student6' %}<th bgcolor="#CCFFCC">D </th>{% else %}<th bgcolor="#FFFFFF">D </th>{% endif %}
+            </tr>
+            <tr><td bgcolor="#FFFFFF">第2希望</td>
+                {% if player.role == 'student1' %}<th bgcolor="#CCFFCC">D </th>{% else %}<th bgcolor="#FFFFFF">D </th>{% endif %}
+                {% if player.role == 'student2' %}<th bgcolor="#CCFFCC">C </th>{% else %}<th bgcolor="#FFFFFF">C </th>{% endif %}
+                {% if player.role == 'student3' %}<th bgcolor="#CCFFCC">B </th>{% else %}<th bgcolor="#FFFFFF">B </th>{% endif %}
+                {% if player.role == 'student4' %}<th bgcolor="#CCFFCC">C </th>{% else %}<th bgcolor="#FFFFFF">C </th>{% endif %}
+                {% if player.role == 'student5' %}<th bgcolor="#CCFFCC">D </th>{% else %}<th bgcolor="#FFFFFF">D </th>{% endif %}
+                {% if player.role == 'student6' %}<th bgcolor="#CCFFCC">A </th>{% else %}<th bgcolor="#FFFFFF">A </th>{% endif %}
+            </tr>
+            <tr><td bgcolor="#FFFFFF">第3希望</td>
+                {% if player.role == 'student1' %}<th bgcolor="#CCFFCC">A </th>{% else %}<th bgcolor="#FFFFFF">A </th>{% endif %}
+                {% if player.role == 'student2' %}<th bgcolor="#CCFFCC">D </th>{% else %}<th bgcolor="#FFFFFF">D </th>{% endif %}
+                {% if player.role == 'student3' %}<th bgcolor="#CCFFCC">A </th>{% else %}<th bgcolor="#FFFFFF">A </th>{% endif %}
+                {% if player.role == 'student4' %}<th bgcolor="#CCFFCC">D </th>{% else %}<th bgcolor="#FFFFFF">D </th>{% endif %}
+                {% if player.role == 'student5' %}<th bgcolor="#CCFFCC">B </th>{% else %}<th bgcolor="#FFFFFF">B </th>{% endif %}
+                {% if player.role == 'student6' %}<th bgcolor="#CCFFCC">B </th>{% else %}<th bgcolor="#FFFFFF">B </th>{% endif %}
+            </tr>
+            <tr><td bgcolor="#FFFFFF">第4希望</td>
+                {% if player.role == 'student1' %}<th bgcolor="#CCFFCC">C </th>{% else %}<th bgcolor="#FFFFFF">C </th>{% endif %}
+                {% if player.role == 'student2' %}<th bgcolor="#CCFFCC">A </th>{% else %}<th bgcolor="#FFFFFF">A </th>{% endif %}
+                {% if player.role == 'student3' %}<th bgcolor="#CCFFCC">D </th>{% else %}<th bgcolor="#FFFFFF">D </th>{% endif %}
+                {% if player.role == 'student4' %}<th bgcolor="#CCFFCC">B </th>{% else %}<th bgcolor="#FFFFFF">B </th>{% endif %}
+                {% if player.role == 'student5' %}<th bgcolor="#CCFFCC">C </th>{% else %}<th bgcolor="#FFFFFF">C </th>{% endif %}
+                {% if player.role == 'student6' %}<th bgcolor="#CCFFCC">C </th>{% else %}<th bgcolor="#FFFFFF">C </th>{% endif %}
+            </tr>
+        </table>
+    <p>　　あなたが学類
+        {% if player.role == 'student1' %} B {% endif %}
+        {% if player.role == 'student2' %} B {% endif %}
+        {% if player.role == 'student3' %} C {% endif %}
+        {% if player.role == 'student4' %} A {% endif %}
+        {% if player.role == 'student5' %} A {% endif %}
+        {% if player.role == 'student6' %} D {% endif %}
+        に配属されると19points得ることが出来ます。</p>
+    <p>　　あなたが学類
+        {% if player.role == 'student1' %} D {% endif %}
+        {% if player.role == 'student2' %} C {% endif %}
+        {% if player.role == 'student3' %} B {% endif %}
+        {% if player.role == 'student4' %} C {% endif %}
+        {% if player.role == 'student5' %} D {% endif %}
+        {% if player.role == 'student6' %} A {% endif %}
+        に配属されると13points得ることが出来ます。</p>
+    <p>　　あなたが学類
+        {% if player.role == 'student1' %} A {% endif %}
+        {% if player.role == 'student2' %} D {% endif %}
+        {% if player.role == 'student3' %} A {% endif %}
+        {% if player.role == 'student4' %} D {% endif %}
+        {% if player.role == 'student5' %} B {% endif %}
+        {% if player.role == 'student6' %} B {% endif %}
+        に配属されると8points得ることが出来ます。</p>
+    <p>　　あなたが学類
+        {% if player.role == 'student1' %} C {% endif %}
+        {% if player.role == 'student2' %} A {% endif %}
+        {% if player.role == 'student3' %} D {% endif %}
+        {% if player.role == 'student4' %} B {% endif %}
+        {% if player.role == 'student5' %} C {% endif %}
+        {% if player.role == 'student6' %} C {% endif %}
+        に配属されると5points得ることが出来ます。</p>
+    <br>
+</div>
+<br>
+
+<div style="background-color : #f0f8ff">
+<p>各学類におけるあなたの優先順位は以下の通りです。</p>
+<table class="" border=1 align="left">
+ <tr><th bgcolor="#FFFFFF" rowspan="2"></th>
+     <th bgcolor="#FFFFFF">学類Ａ</th>
+     <th bgcolor="#FFFFFF">学類Ｂ</th>
+     <th bgcolor="#FFFFFF">学類Ｃ</th>
+     <th bgcolor="#FFFFFF">学類Ｄ</th>
+ </tr>
+    <tr>
+     <th bgcolor="#FFFFFF">定員2名</th>
+     <th bgcolor="#FFFFFF">定員1名</th>
+     <th bgcolor="#FFFFFF">定員2名</th>
+     <th bgcolor="#FFFFFF">定員1名</th>
+ </tr>
+ <tr><td bgcolor="#FFFFFF">第1優先</td>
+     {% if player.role == 'student3' %}<th bgcolor="#ffc0cb">学生3 </th>{% else %}<th bgcolor="#FFFFFF">学生3 </th>{% endif %}
+     {% if player.role == 'student4' %}<th bgcolor="#ffc0cb">学生4 </th>{% else %}<th bgcolor="#FFFFFF">学生4 </th>{% endif %}
+     {% if player.role == 'student2' %}<th bgcolor="#ffc0cb">学生2 </th>{% else %}<th bgcolor="#FFFFFF">学生2 </th>{% endif %}
+     {% if player.role == 'student5' %}<th bgcolor="#ffc0cb">学生5 </th>{% else %}<th bgcolor="#FFFFFF">学生5 </th>{% endif %}
+</tr>
+ <tr><td bgcolor="#FFFFFF">第2優先</td>
+     {% if player.role == 'student1' %}<th bgcolor="#ffc0cb">学生1 </th>{% else %}<th bgcolor="#FFFFFF">学生1 </th>{% endif %}
+     {% if player.role == 'student6' %}<th bgcolor="#ffc0cb">学生6 </th>{% else %}<th bgcolor="#FFFFFF">学生6 </th>{% endif %}
+     {% if player.role == 'student5' %}<th bgcolor="#ffc0cb">学生5 </th>{% else %}<th bgcolor="#FFFFFF">学生5 </th>{% endif %}
+     {% if player.role == 'student4' %}<th bgcolor="#ffc0cb">学生4 </th>{% else %}<th bgcolor="#FFFFFF">学生4 </th>{% endif %}
+ </tr>
+ <tr><td bgcolor="#FFFFFF">第3優先</td>
+     {% if player.role == 'student6' %}<th bgcolor="#ffc0cb">学生6 </th>{% else %}<th bgcolor="#FFFFFF">学生6 </th>{% endif %}
+     {% if player.role == 'student5' %}<th bgcolor="#ffc0cb">学生5 </th>{% else %}<th bgcolor="#FFFFFF">学生5 </th>{% endif %}
+     {% if player.role == 'student4' %}<th bgcolor="#ffc0cb">学生4 </th>{% else %}<th bgcolor="#FFFFFF">学生4 </th>{% endif %}
+     {% if player.role == 'student2' %}<th bgcolor="#ffc0cb">学生2 </th>{% else %}<th bgcolor="#FFFFFF">学生2 </th>{% endif %}
+ </tr>
+ <tr><td bgcolor="#FFFFFF">第4優先</td>
+     {% if player.role == 'student5' %}<th bgcolor="#ffc0cb">学生5 </th>{% else %}<th bgcolor="#FFFFFF">学生5 </th>{% endif %}
+     {% if player.role == 'student3' %}<th bgcolor="#ffc0cb">学生3 </th>{% else %}<th bgcolor="#FFFFFF">学生3 </th>{% endif %}
+     {% if player.role == 'student3' %}<th bgcolor="#ffc0cb">学生3 </th>{% else %}<th bgcolor="#FFFFFF">学生3 </th>{% endif %}
+     {% if player.role == 'student6' %}<th bgcolor="#ffc0cb">学生6 </th>{% else %}<th bgcolor="#FFFFFF">学生6 </th>{% endif %}
+ </tr>
+ <tr><td bgcolor="#FFFFFF">第5優先</td>
+     {% if player.role == 'student2' %}<th bgcolor="#ffc0cb">学生2 </th>{% else %}<th bgcolor="#FFFFFF">学生2 </th>{% endif %}
+     {% if player.role == 'student2' %}<th bgcolor="#ffc0cb">学生2 </th>{% else %}<th bgcolor="#FFFFFF">学生2 </th>{% endif %}
+     {% if player.role == 'student1' %}<th bgcolor="#ffc0cb">学生1 </th>{% else %}<th bgcolor="#FFFFFF">学生1 </th>{% endif %}
+     {% if player.role == 'student3' %}<th bgcolor="#ffc0cb">学生3 </th>{% else %}<th bgcolor="#FFFFFF">学生3 </th>{% endif %}
+ </tr>
+ <tr><td bgcolor="#FFFFFF">第6優先</td>
+     {% if player.role == 'student4' %}<th bgcolor="#ffc0cb">学生4 </th>{% else %}<th bgcolor="#FFFFFF">学生4 </th>{% endif %}
+     {% if player.role == 'student1' %}<th bgcolor="#ffc0cb">学生1 </th>{% else %}<th bgcolor="#FFFFFF">学生1 </th>{% endif %}
+     {% if player.role == 'student6' %}<th bgcolor="#ffc0cb">学生6 </th>{% else %}<th bgcolor="#FFFFFF">学生6 </th>{% endif %}
+     {% if player.role == 'student1' %}<th bgcolor="#ffc0cb">学生1 </th>{% else %}<th bgcolor="#FFFFFF">学生1 </th>{% endif %}
+ </tr>
+</table>
+<br>
+
+    <p>　　学類Aはあなたを 第
+    {% if player.role == 'student1' %} 2 {% endif %}
+    {% if player.role == 'student2' %} 5 {% endif %}
+    {% if player.role == 'student3' %} 1 {% endif %}
+    {% if player.role == 'student4' %} 6 {% endif %}
+    {% if player.role == 'student5' %} 4 {% endif %}
+    {% if player.role == 'student6' %} 3 {% endif %}
+    優先 としています。</p>
+
+    <p>　　学類Bはあなたを 第
+    {% if player.role == 'student1' %} 6 {% endif %}
+    {% if player.role == 'student2' %} 5 {% endif %}
+    {% if player.role == 'student3' %} 4 {% endif %}
+    {% if player.role == 'student4' %} 1 {% endif %}
+    {% if player.role == 'student5' %} 3 {% endif %}
+    {% if player.role == 'student6' %} 2 {% endif %}
+    優先 としています。</p>
+
+    <p>　　学類Cはあなたを 第
+    {% if player.role == 'student1' %} 5 {% endif %}
+    {% if player.role == 'student2' %} 1 {% endif %}
+    {% if player.role == 'student3' %} 4 {% endif %}
+    {% if player.role == 'student4' %} 3 {% endif %}
+    {% if player.role == 'student5' %} 2 {% endif %}
+    {% if player.role == 'student6' %} 6 {% endif %}
+    優先 としています。</p>
+
+    <p>　　学類Dはあなたを 第
+    {% if player.role == 'student1' %} 6 {% endif %}
+    {% if player.role == 'student2' %} 3 {% endif %}
+    {% if player.role == 'student3' %} 5 {% endif %}
+    {% if player.role == 'student4' %} 2 {% endif %}
+    {% if player.role == 'student5' %} 1 {% endif %}
+    {% if player.role == 'student6' %} 4 {% endif %}
+    優先 としています。</p>
+
+<br>
+<br>
+</div>
+
+<style type="text/css">
+table th{
+  text-align: center;
+}
+</style>
+
+<br>
+<div style="background-color : #FFFF99">
+    <p>このとき、あなたが提出する学類の応募順位を入力して下さい。</p>
+</div>
+
+<p>第1希望</p>
+{% formfield player.student_first_choice %}
+
+<p>第2希望</p>
+{% formfield player.student_second_choice %}
+
+<p>第3希望</p>
+{% formfield player.student_third_choice %}
+
+<p>第4希望</p>
+{% formfield player.student_fourth_choice %}
+
+    {% next_button %}
+
+{% endblock %}
+
+
+{% block scripts %}
+
+    <!-- define a script -->
+    <script>
+    setTimeout(
+        function () {
+            alert("2分経過しました。順位を入力し、Nextボタンを押してください。");
+        },
+        120*1000 // 120秒
+    );
+    </script>
+
+
+{% endblock %}
+

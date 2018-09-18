@@ -1,0 +1,60 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    アンケート
+{% endblock %}
+
+{% block content %}
+<p>実験へのご参加、ありがとうございました。</p>
+<p>このアンケートは、本実験と同様に個人情報を特定しない範囲で使用させて頂きます。</p>
+       　　<table border="1" width="1500" cellspacing="0" cellpadding="5" bordercolor="#333333">
+            <tr>
+                <td bgcolor="#ffffe0" align="left" width="300">実験1のインストラクションは理解できましたか？5を理解できた、1を理解できなかったとして、5段階で評価してください。</td>
+                <td bgcolor="#FFFFFF" align="left" > {% formfield player.q_ex_11 %} </td>
+            </tr>
+            <tr>
+                <td bgcolor="#ffffe0" align="left" width="300">実験1は何回目から理解できましたか？理解できなかった場合は空白でかまいません。</td>
+                <td bgcolor="#FFFFFF" align="left" > {% formfield player.q_ex_12%} </td>
+            </tr>
+            <tr>
+                <td bgcolor="#ffffe0" align="left" >実験1で、応募順位はどのように決めましたか？一番近いものを選んで下さい。</td>
+                <td bgcolor="#FFFFFF" align="left" > {% formfield player.q_ex_13 %} </td>
+            </tr>
+            <tr>
+                <td bgcolor="#ffffe0" align="left" >実験1で、他の学生の応募順位を予想しましたか？一番近いものを選んで下さい。</td>
+                <td bgcolor="#FFFFFF" align="left" > {% formfield player.q_ex_14 %} </td>
+            </tr>
+        　　<tr>
+                <td bgcolor="#eafff4" align="left" >実験2のインストラクションは理解できましたか？5を理解できた、1を理解できなかったとして、5段階で評価してください。</td>
+                <td bgcolor="#FFFFFF" align="left" > {% formfield player.q_ex_21 %} </td>
+            </tr>
+            <tr>
+                <td bgcolor="#eafff4" align="left" >実験2は何回目から理解できましたか？理解できなかった場合は空白でかまいません。</td>
+                <td bgcolor="#FFFFFF" align="left" > {% formfield player.q_ex_22 %} </td>
+            </tr>
+            <tr>
+                <td bgcolor="#eafff4" align="left" >実験2で、応募順位はどのように決めましたか？一番近いものを選んで下さい。</td>
+                <td bgcolor="#FFFFFF" align="left" > {% formfield player.q_ex_23 %} </td>
+            </tr>
+            <tr>
+                <td bgcolor="#eafff4" align="left" >実験2で、他の学生の応募順位を予想しましたか？一番近いものを選んで下さい。</td>
+                <td bgcolor="#FFFFFF" align="left" > {% formfield player.q_ex_24 %} </td>
+            </tr>
+            <tr>
+                <td bgcolor="#ffefff" align="left" >本実験ような進学振り分けに実際にあなたが参加する場合を想定して下さい。そのとき、あなたが一番重視する項目に近いものを選んでください。</td>
+                <td bgcolor="#FFFFFF" align="left" > {% formfield player.q_ex_7 %} </td>
+            </tr>
+            <tr>
+                <td bgcolor="#ffefff" align="left" width="300">性別</td>
+                <td bgcolor="#FFFFFF" align="left" > {% formfield player.q_gender %} </td>
+            </tr>
+            <tr>
+                <td bgcolor="#ffefff" align="left" width="300">DAメカニズム（GSメカニズム、受け入れ留保方式とも言う）を知っていますか？</td>
+                <td bgcolor="#FFFFFF" align="left" > {% formfield player.q_da %} </td>
+            </tr>
+           </table>
+<br><br>
+    {% next_button %}
+
+{% endblock %}

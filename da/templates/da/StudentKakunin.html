@@ -1,0 +1,33 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    生徒：入力確認画面
+{% endblock %}
+
+{% block content %}
+
+<p>あなたが選んだ順位は以下の通りです。</p>
+<style type="text/css">
+.table5 {
+  border-collapse: collapse;
+  width: 250px;
+}
+.table5 th {
+  background-color: #cccccc;
+  text-align: center;
+}
+.table5 td {
+  text-align: center;
+}
+
+</style>
+<table class="table5" border=1>
+ <tr><th>1位</th><th>2位</th><th>3位</th><th>4位</th></tr>
+ <tr><td>{{ player.student_first_choice }}</td><td>{{ player.student_second_choice }}</td><td>{{ player.student_third_choice }}</td><td>{{ player.student_fourth_choice }}</td></tr>
+</table>
+
+
+
+    {% next_button %}
+{% endblock %}

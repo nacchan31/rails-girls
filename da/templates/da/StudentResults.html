@@ -1,0 +1,30 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    結果確認画面
+{% endblock %}
+
+{% block content %}
+
+
+{{group.tekitou}}
+
+
+
+<p>自分の入力結果です</p>
+
+<p>役割:{{ player.role_deside }}</p>
+{{player.student_first_choice}}{{player.student_second_choice}}
+
+<p>--------------------------------------------------</p>
+
+<p>他の参加者の入力結果です</p>
+<p>役割:{{ player.other_player1.role_deside}}</p>
+{{player.other_player1.student_first_choice }}{{player.other_player1.student_second_choice }}{{player.other_player1.student_third_choice }}
+
+<!--
+<p>役割:{{ player.other_player2.role_deside}}</p>
+{{player.other_player2.teacher_first_choice }}{{player.other_player2.teacher_second_choice }}{{player.other_player2.teacher_third_choice }}
+-->
+{% endblock %}

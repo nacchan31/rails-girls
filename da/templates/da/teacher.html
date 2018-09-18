@@ -1,0 +1,42 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    先生：希望順位入力
+{% endblock %}
+
+{% block content %}
+
+<!--選好得点表-->
+<p>あなたの得点は以下の表のようになっています。</p>
+<style type="text/css">
+.table5 {
+  border-collapse: collapse;
+  width: 250px;
+}
+.table5 th {
+  background-color: #cccccc;
+  text-align: center;   /* 中央揃え */
+}
+.table5 td {
+  text-align: center;
+}
+</style>
+
+<table class="table5" border=1>
+ <tr><th></th><th>生徒1</th><th>生徒2</th><th>生徒3</th></tr>
+ <tr><td>得点</td><td>3</td><td>7</td><td>9</td></tr>
+</table>
+
+<p>1位</p>
+{% formfield player.teacher_first_choice %}
+
+<p>2位</p>
+{% formfield player.teacher_second_choice %}
+
+<p>3位</p>
+{% formfield player.teacher_third_choice %}
+
+    {% next_button %}
+
+{% endblock %}

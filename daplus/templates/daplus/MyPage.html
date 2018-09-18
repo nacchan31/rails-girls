@@ -1,0 +1,19 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+   待機画面
+{% endblock %}
+
+{% block content %}
+ <div>
+     <p><font color="red">下の[Next]ボタンは、実験が開始されてから押すことになります。操作せずお待ちください。</font></p>
+     <br>
+     <br>
+ </div>
+
+
+    {% next_button %}
+
+{% endblock %}
+
